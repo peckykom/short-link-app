@@ -18,11 +18,11 @@ Tracker.autorun(() => {
     console.log("pathname", pathname);
 
     if (isUnauthenticatedPage && isAuthenticaced) {
-       history.push('/links');
-        console.log("aaaaaaaaaaaaaaa");
+       history.replace('/links');
+        console.log("private page - user logged in");
     } else if (isAuthenticatedPage && !isAuthenticaced) {
-        history.push('/');
-        console.log("bbbbbbbbbbbbbbb");
+        history.replace('/');
+        console.log("public page - user logged out");
     }
 });
 
