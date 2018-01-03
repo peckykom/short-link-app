@@ -2,7 +2,6 @@ import React from "react";
 import { Link } from 'react-router-dom';
 import { Accounts } from 'meteor/accounts-base';
 
-// Andrew code
 export default class Signup extends React.Component {
     constructor(props) {
         super(props);
@@ -17,7 +16,7 @@ export default class Signup extends React.Component {
         let password = this.refs.password.value.trim();
 
         if(password.length < 9){
-            this.setState({error: "Password must be more then 8 characters long"});
+            return this.setState({error: "Password must be more then 8 characters long"});
         }
 
         Accounts.createUser({email, password}, (err) => {
@@ -49,9 +48,3 @@ export default class Signup extends React.Component {
         </div>
     }
 }
-
-// My content
-//export default Signup = () => <div>
-//    <h1>Join short Link</h1>
-//    <Link to="/">Have an account?</Link>
-//</div>;
