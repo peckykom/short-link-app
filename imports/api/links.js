@@ -7,8 +7,9 @@ export const Links = new Mongo.Collection('links');
 //require('meteor/meteor').Meteor;
 
 if (Meteor.isServer) {
-    Meteor.publish('links',() =>{
-       return Links.find({url: '2'});
+    Meteor.publish('links', function(){
+        //Meteor.userId()
+       return Links.find({userId: this.userId});
     });
 }
 
