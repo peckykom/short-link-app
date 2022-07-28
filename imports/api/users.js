@@ -5,7 +5,7 @@ import { Accounts } from 'meteor/accounts-base';
 Accounts.validateNewUser((user)=> {
     const email = user.emails[0].address;
 
-    // server log
+
     console.log("this is the user", user);
 
     try {
